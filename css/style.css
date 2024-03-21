@@ -1,0 +1,178 @@
+/* CSS Sheet for Tech4Dev Clone */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+}
+
+#navBar, #main {
+    padding: 1% 10%;
+    background-color: #083a55;
+}
+
+h1, h4 {
+    color: green;
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    padding-top: 5px;
+}
+
+a {
+    color: #000;
+    padding: 10px;
+    text-decoration: none;
+}
+
+p.white, li.white, a.white {
+    color: #fff;
+}
+
+.login, .participate, .register {
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.login {
+    color: rgba(60, 174, 92);
+    border: 1px solid rgba(60, 174, 92);
+}
+
+.register, .participate {
+    background-color: rgba(60, 174, 92);
+    color: #fff;
+    border: none;
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.nav-logo {
+    /* width: 10%; */
+    padding: 5px 10px;
+}
+
+.nav-links {
+    color: #ffff;
+    /* width: 30%; */
+    padding: 5px;
+}
+
+.nav-items {
+    margin-top: 0;
+    padding: 10px;
+}
+
+.nav-actions {
+    padding: 5px;
+    /* width: 30%; */
+}
+
+.banner {
+    background-color: #083a55;
+    display: flex;
+    padding: 2% 0%;
+}
+
+.left-text {
+    flex: 1;
+    color: #fff;
+}
+
+.right-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-image image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#details {
+    padding: 1% 10%;
+}
+
+.support, .unlock, .winn {
+    text-align: center;
+    padding: 1% 10%;
+}
+
+.unlock {
+    background-color: #062d42;
+    border-radius: 30px;
+    padding: 2% 5%;
+}
+
+.category {
+    padding-top: 30px;
+}
+
+#testimonial {
+    text-align: center;
+    background-color: rgba(0, 255, 0, 0.15);
+    padding: 5% 10%;
+}
+
+/* .testimonies img {
+    max-width: 40px;
+    max-height: 40px;
+} */
+
+.testimony {
+    text-align: left;
+    background-color: rgb(60, 174, 92);
+    padding: 20px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+.profile {
+    display: flex;
+}
+
+.circle {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 20px;
+}
+
+.direction {
+    margin: 20px 10px;
+    padding: 10px;
+    background-color: rgb(60, 174, 92);
+    border: 1px solid rgb(60, 174, 92);
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+}
+
+#footer {
+    text-align: center;
+    background-color: #083a55;
+    padding: 5% 5% 2% 5%;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quicks, .social, .mail {
+    color: #fff;
+}
