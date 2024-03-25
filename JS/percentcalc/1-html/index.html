@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <p>A percentage calculator for your conversion needs</p>
+        </div>
+        <div class="main">
+            <h1>Percentage Calculators</h1>
+            <section class="num-to-per">
+                <h3>Converts numbers to percentage</h3>
+                <form action="">
+                    <p>How many percent of <input type="text" name="num2" id="denumerator"> is <input type="text" name="num1" id="numerator"></p>
+                    <input type="submit" value="Calculate">
+                </form>
+                <p class="result">Result: <span id="result">0</span> %</p>
+            </section>
+            <section class="per-to-num">
+                <h3>Converts percentages to numbers</h3>
+                <h4>Get a portion from a total</h4>
+                <form action="">
+                    <p>What is <input type="text" name="percent" id="percent"> percent of <input type="text" name="total" id="total"></p>
+                    <input type="submit" value="Calculate">
+                </form>
+                <h4>Get a total from a portion</h4>
+                <form action="">
+                    <p><input type="text" name="percent" id="percent"> is <input type="text" name="percent" id="percent"> percent of</p>
+                    <input type="submit" value="Calculate">
+                </form>
+                <p class="result">Result: <span id="result">0</span></p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
