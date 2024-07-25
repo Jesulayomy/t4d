@@ -1,0 +1,16 @@
+{
+  "name": "node-api",
+  "version": "1.0.0",
+  "description": "This is an example API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jesulayomi <jesulayomi081@gmail.com> (https://www.jesulayomi.tech/)",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  }
+}
