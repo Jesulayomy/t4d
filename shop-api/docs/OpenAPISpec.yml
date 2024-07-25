@@ -1,0 +1,404 @@
+openapi: 3.0.0
+x-stoplight:
+  id: sjpvi2fmxb0a9
+info:
+  title: Shop API
+  version: '1.0'
+  description: OAS For Shop API
+  license:
+    name: MIT
+    url: 'https://opensource.org/license/mit'
+  contact:
+    name: "Jesulayomi"
+    url: "https://jesulayomi.tech"
+servers:
+  - url: 'http://127.0.0.1:3000'
+    description: baseURL
+paths:
+  /products:
+    parameters: []
+    get:
+      summary: Get All Products
+      tags:
+        - Products
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    likes:
+                      type: integer
+                    title:
+                      type: string
+                    price:
+                      type: integer
+                x-examples:
+                  Example 1:
+                    - _id: 66a292fd54d78fb4c42f6ded
+                      likes: 0
+                      title: West Zeldaside Souvenir
+                      price: 759
+                    - _id: 66a2932054d78fb4c42f6df9
+                      likes: 0
+                      title: North Cindy Souvenir
+                      price: 332
+                    - _id: 66a293b254d78fb4c42f6e06
+                      likes: 0
+                      title: Lake Adolfland Souvenir
+                      price: 777
+                    - _id: 66a293b454d78fb4c42f6e11
+                      likes: 0
+                      title: Kuhicmouth Souvenir
+                      price: 939
+      operationId: get-products
+      x-stoplight:
+        id: kbzdrpjavtxc0
+    post:
+      summary: New Product
+      tags:
+        - Products
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  likes:
+                    type: integer
+                  _id:
+                    type: string
+                  title:
+                    type: string
+                  price:
+                    type: integer
+                x-examples:
+                  Example 1:
+                    likes: 0
+                    _id: 66a291dec37a85eb5424fec1
+                    title: Enterprise Souvenir
+                    price: 78
+      operationId: post-products
+      x-stoplight:
+        id: 2t3otsflgxte8
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                price:
+                  type: integer
+              x-examples:
+                Example 1:
+                  title: New York Souvenir
+                  price: 72
+  '/products/{productID}':
+    put:
+      summary: Update Product
+      tags:
+        - Products
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                  likes:
+                    type: integer
+                  title:
+                    type: string
+                  price:
+                    type: integer
+                x-examples:
+                  Example 1:
+                    _id: 66a293b454d78fb4c42f6e11
+                    likes: 0
+                    title: New Jersey Souvenir
+                    price: 939
+              examples:
+                Response Example:
+                  value:
+                    _id: 66a293b454d78fb4c42f6e11
+                    likes: 0
+                    title: Kuhicmouth Souvenir
+                    price: 939
+      operationId: put-products
+      x-stoplight:
+        id: 9kkfvve3yppeh
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              x-examples:
+                Example 1:
+                  title: New Jersey Souvenir
+                  price: 684
+              properties:
+                title:
+                  type: string
+                price:
+                  type: integer
+            examples:
+              Change Price and Title:
+                value:
+                  title: string
+                  price: 0
+    parameters:
+      - schema:
+          type: string
+        name: productID
+        in: path
+        required: true
+    delete:
+      summary: Delete Product
+      tags:
+        - Products
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                Empty Response:
+                  value: {}
+      operationId: delete-products-productID
+      x-stoplight:
+        id: 9z3ol4sqmo1wk
+  /wishlists:
+    get:
+      summary: Get All Wishlists
+      tags:
+        - WishLists
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    products:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          _id:
+                            type: string
+                          likes:
+                            type: integer
+                          title:
+                            type: string
+                          price:
+                            type: integer
+                    title:
+                      type: string
+                x-examples:
+                  Example 1:
+                    - _id: 66a292fd54d78fb4c42f6df0
+                      products:
+                        - _id: 66a292fd54d78fb4c42f6ded
+                          likes: 0
+                          title: West Zeldaside Souvenir
+                          price: 759
+                      title: Sipesfort WishList
+                    - _id: 66a2932054d78fb4c42f6dfd
+                      products:
+                        - _id: 66a2932054d78fb4c42f6df9
+                          likes: 0
+                          title: North Cindy Souvenir
+                          price: 332
+                      title: Hayesborough WishList
+                    - _id: 66a293b254d78fb4c42f6e0a
+                      products:
+                        - _id: 66a293b254d78fb4c42f6e06
+                          likes: 0
+                          title: Lake Adolfland Souvenir
+                          price: 777
+                      title: Lake Adolfland WishList
+                    - _id: 66a293b454d78fb4c42f6e15
+                      products:
+                        - _id: 66a293b454d78fb4c42f6e11
+                          likes: 0
+                          title: Kuhicmouth Souvenir
+                          price: 567
+                      title: Kuhicmouth WishList
+              examples:
+                All Wishlists:
+                  value:
+                    - _id: 66a292fd54d78fb4c42f6df0
+                      products:
+                        - _id: 66a292fd54d78fb4c42f6ded
+                          likes: 0
+                          title: West Zeldaside Souvenir
+                          price: 759
+                      title: Sipesfort WishList
+                    - _id: 66a2932054d78fb4c42f6dfd
+                      products:
+                        - _id: 66a2932054d78fb4c42f6df9
+                          likes: 0
+                          title: North Cindy Souvenir
+                          price: 332
+                      title: Hayesborough WishList
+                    - _id: 66a293b254d78fb4c42f6e0a
+                      products:
+                        - _id: 66a293b254d78fb4c42f6e06
+                          likes: 0
+                          title: Lake Adolfland Souvenir
+                          price: 777
+                      title: Lake Adolfland WishList
+                    - _id: 66a293b454d78fb4c42f6e15
+                      products:
+                        - _id: 66a293b454d78fb4c42f6e11
+                          likes: 0
+                          title: Kuhicmouth Souvenir
+                          price: 567
+                      title: Kuhicmouth WishList
+      operationId: get-wishlists
+      x-stoplight:
+        id: qdtlhnfe2a157
+    post:
+      summary: New Wishlist
+      tags:
+        - WishLists
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  products:
+                    type: array
+                    items:
+                      type: object
+                      properties: {}
+                  _id:
+                    type: string
+                  title:
+                    type: string
+                x-examples:
+                  Example 1:
+                    products: []
+                    _id: 66a2922cc37a85eb5424fec5
+                    title: Cleveland WishList
+              examples:
+                New List:
+                  value:
+                    products: []
+                    _id: 66a2922cc37a85eb5424fec5
+                    title: Cleveland WishList
+      operationId: post-wishlists
+      x-stoplight:
+        id: jqij950oych7b
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+              x-examples:
+                Example 1:
+                  title: '{{title}} WishList'
+            examples:
+              New Wishlist:
+                value:
+                  title: New York WishList
+  '/wishlists/{productID}/add':
+    parameters:
+      - schema:
+          type: string
+        name: productID
+        in: path
+        required: true
+    put:
+      summary: Update Wishlist
+      tags:
+        - WishLists
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                  products:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        _id:
+                          type: string
+                        likes:
+                          type: integer
+                        title:
+                          type: string
+                        price:
+                          type: integer
+                  title:
+                    type: string
+                x-examples:
+                  Example 1:
+                    _id: 66a2922cc37a85eb5424fec5
+                    products:
+                      - _id: 66a291dec37a85eb5424fec1
+                        likes: 0
+                        title: Enterprise Souvenir
+                        price: 78
+                    title: Cleveland WishList
+              examples:
+                Updated list:
+                  value:
+                    _id: 66a2922cc37a85eb5424fec5
+                    products:
+                      - _id: 66a291dec37a85eb5424fec1
+                        likes: 0
+                        title: Enterprise Souvenir
+                        price: 78
+                    title: Cleveland WishList
+      operationId: put-wishlists-productID-add
+      x-stoplight:
+        id: 03jp7shqpg534
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                wishlist:
+                  type: string
+              x-examples:
+                Example 1:
+                  wishlist: '{{wishListID}}'
+            examples:
+              Update List body:
+                value:
+                  wishlist: '{{wishListID}}'
